@@ -25,3 +25,12 @@ async function init() {
   }
 }
 init();
+
+/* SEARCH PAGE */
+navSearch.onclick = () => {
+     window.__currentPage = "search"; 
+  setActiveNav(navSearch);
+  pageTitle.textContent = "Rechercher";
+  searchInput.classList.remove("hidden");
+  document.querySelector(".search-wrapper").classList.remove("hidden");
+};
