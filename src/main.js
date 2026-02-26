@@ -48,3 +48,13 @@ searchInput.addEventListener("input", async (e) => {
   renderRecipes(results);
   hideLoader();
 });
+
+/* HOME */
+navHome.onclick = () => {
+    window.__currentPage = "home";
+  setActiveNav(navHome);
+  pageTitle.textContent = "Découvrir";
+  searchInput.classList.add("hidden");
+  renderRecipes(allRecipes);
+  document.querySelector(".search-wrapper").classList.add("hidden");
+};
