@@ -1,0 +1,24 @@
+@media (min-width: 768px) {
+  .recipes-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .recipe-card {
+    width: calc(50% - 0.625rem);
+  }
+
+  .modal-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipe-card {
+    width: calc(33.333% - 0.84rem);
+  }
+
+  .modal-content {
+    max-width: 60rem;
+  }
+}
