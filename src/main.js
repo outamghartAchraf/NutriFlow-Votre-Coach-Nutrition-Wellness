@@ -34,3 +34,17 @@ navSearch.onclick = () => {
   searchInput.classList.remove("hidden");
   document.querySelector(".search-wrapper").classList.remove("hidden");
 };
+
+searchInput.addEventListener("input", async (e) => {
+  const query = e.target.value.trim();
+
+  if (!query) {
+    renderRecipes(allRecipes);
+    return;
+  }
+
+  showLoader();
+  const results = await searchRecipes(query);
+  renderRecipes(results);
+  hideLoader();
+});
