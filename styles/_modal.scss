@@ -1,0 +1,226 @@
+// ===== MODAL =====
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+
+  &.hidden { display: none; }
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 52rem;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+// Hero
+.modal-hero {
+  position: relative;
+  height: 16rem;
+  overflow: hidden;
+}
+
+.modal-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  border: none;
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s ease;
+
+  &:hover { background: rgba(255,255,255,0.35); }
+}
+
+.modal-hero-body {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 4rem;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.modal-hero-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.modal-hero-tag {
+  font-size: 0.72rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.25);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+.modal-fav-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  border: none;
+  color: #ffffff;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover { background: rgba(255,255,255,0.35); }
+  &.fav   { color: #ef4444; }
+}
+
+// Body
+.modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+// Stats
+.modal-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.modal-stat {
+  background-color: #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-stat-icon {
+  font-size: 1.1rem;
+  color: #6b7280;
+  width: 1.25rem;
+  text-align: center;
+
+  &.gold   { color: #f59e0b; }
+  &.orange { color: #f97316; }
+}
+
+.modal-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.modal-stat-label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.modal-stat-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.stars { color: #f59e0b; }
+
+// Nutri Badge
+.modal-nutri-badge {
+  display: flex;
+}
+
+.modal-nutri-pill {
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.85rem;
+
+  &.badge-green  { background-color: #22c55e; }
+  &.badge-orange { background-color: #f97316; }
+  &.badge-red    { background-color: #ef4444; }
+}
+
+// Section
+.modal-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+// Ingredients
+.modal-ingredients {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  li {
+    font-size: 0.88rem;
+    color: #374151;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "•";
+      color: #22c55e;
+      font-weight: 700;
+    }
+  }
+}
+
+// Instructions
+.modal-instructions {
+  font-size: 0.88rem;
+  color: #374151;
+  line-height: 1.7;
+}
