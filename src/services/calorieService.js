@@ -7,3 +7,9 @@ export function getNutriBadge(calories) {
     return { label: "Riche", color: "red" };
   }
 }
+
+export function calculateTotalCalories(recipes, favorites) {
+  return recipes
+    .filter(recipe => favorites.includes(recipe.id))
+    .reduce((total, recipe) => total + (recipe.caloriesPerServing || 0), 0);
+}
