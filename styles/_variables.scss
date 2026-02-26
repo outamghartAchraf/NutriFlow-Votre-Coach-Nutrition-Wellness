@@ -1,0 +1,31 @@
+// ===== COLORS =====
+$color-white:      #ffffff;
+$color-bg:         #f9fafb;
+$color-text:       #111827;
+$color-text-light: #374151;
+$color-gray:       #9ca3af;
+$color-gray-mid:   #6b7280;
+$color-border:     #e5e7eb;
+$color-stat-bg:    #f3f4f6;
+
+$color-green:      #22c55e;
+$color-green-dark: #16a34a;
+$color-orange:     #f97316;
+$color-red:        #ef4444;
+$color-gold:       #f59e0b;
+
+// ===== SHADOWS =====
+$shadow-card:      0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-card-hover:0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-modal:     0 24px 60px rgba(0, 0, 0, 0.25);
+$shadow-overlay:   rgba(0, 0, 0, 0.55);
+
+// ===== RADIUS =====
+$radius-sm:    0.75rem;
+$radius-md:    1rem;
+$radius-lg:    1.25rem;
+$radius-badge: 9999px;
+
+// ===== TRANSITIONS =====
+$transition-card:  transform 0.15s ease, box-shadow 0.15s ease;
+$transition-fast:  0.15s ease;

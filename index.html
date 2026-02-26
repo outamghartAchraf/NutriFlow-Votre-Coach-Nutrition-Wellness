@@ -60,7 +60,34 @@
   </main>
 </div>
 
- 
+<!-- MODAL -->
+<div id="modal" class="modal hidden"></div>
+
+<!-- NAV -->
+<nav class="bottom-nav">
+  <div class="nav-inner">
+
+    <button id="navHome" class="nav-btn active">
+      <i class="fas fa-house nav-icon"></i>
+      <span class="nav-label">Accueil</span>
+    </button>
+
+    <button id="navSearch" class="nav-btn">
+      <i class="fas fa-search nav-icon"></i>
+      <span class="nav-label">Rechercher</span>
+    </button>
+
+<button id="navFavorites" class="nav-btn">
+  <div class="nav-icon-wrapper">
+    <i class="fas fa-heart nav-icon"></i>
+    <span id="favCount" class="fav-count hidden">0</span>
+  </div>
+  <span class="nav-label">Favoris</span>
+</button>
+
+  </div>
+</nav>
+
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>
