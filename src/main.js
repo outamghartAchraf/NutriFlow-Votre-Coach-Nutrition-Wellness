@@ -58,3 +58,16 @@ navHome.onclick = () => {
   renderRecipes(allRecipes);
   document.querySelector(".search-wrapper").classList.add("hidden");
 };
+
+/* FAVORITES */
+navFavorites.onclick = () => {
+ window.__currentPage = "favorites";
+  setActiveNav(navFavorites);
+  pageTitle.textContent = "Favoris";
+  searchInput.classList.add("hidden");
+  document.querySelector(".search-wrapper").classList.add("hidden");
+
+  const favorites = getFavorites();
+  const favRecipes = allRecipes.filter(r => favorites.includes(r.id));
+  renderRecipes(favRecipes);
+};
