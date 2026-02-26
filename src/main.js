@@ -71,3 +71,8 @@ navFavorites.onclick = () => {
   const favRecipes = allRecipes.filter(r => favorites.includes(r.id));
   renderRecipes(favRecipes);
 };
+
+function setActiveNav(activeBtn) {
+  [navHome, navSearch, navFavorites].forEach(btn => btn.classList.remove("active"));
+  activeBtn.classList.add("active");
+}
