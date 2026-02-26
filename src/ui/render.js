@@ -77,7 +77,6 @@ export function renderRecipes(recipes) {
   updateTotalCalories();
 }
 
-
 function updateTotalCalories() {
   const favorites = getFavorites();
   const total = calculateTotalCalories(currentRecipes, favorites);
@@ -189,4 +188,3 @@ function openModal(recipe) {
     renderRecipes(currentRecipes);
   };
 }
-
