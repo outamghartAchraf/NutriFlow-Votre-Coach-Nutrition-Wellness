@@ -27,13 +27,13 @@ async function init() {
 init();
 
 /* SEARCH PAGE */
-navSearch.onclick = () => {
-     window.__currentPage = "search"; 
+navSearch.addEventListener("click", () => {
+  window.__currentPage = "search"; 
   setActiveNav(navSearch);
   pageTitle.textContent = "Rechercher";
   searchInput.classList.remove("hidden");
   document.querySelector(".search-wrapper").classList.remove("hidden");
-};
+});
 
 searchInput.addEventListener("input", async (e) => {
   const query = e.target.value.trim();
@@ -50,18 +50,20 @@ searchInput.addEventListener("input", async (e) => {
 });
 
 /* HOME */
-navHome.onclick = () => {
-    window.__currentPage = "home";
+navHome.addEventListener("click", () => {
+  window.__currentPage = "home";
   setActiveNav(navHome);
   pageTitle.textContent = "Découvrir";
   searchInput.classList.add("hidden");
   renderRecipes(allRecipes);
   document.querySelector(".search-wrapper").classList.add("hidden");
-};
+});
+
+
 
 /* FAVORITES */
-navFavorites.onclick = () => {
- window.__currentPage = "favorites";
+navFavorites.addEventListener("click", () => {
+window.__currentPage = "favorites";
   setActiveNav(navFavorites);
   pageTitle.textContent = "Favoris";
   searchInput.classList.add("hidden");
@@ -70,9 +72,20 @@ navFavorites.onclick = () => {
   const favorites = getFavorites();
   const favRecipes = allRecipes.filter(r => favorites.includes(r.id));
   renderRecipes(favRecipes);
-};
+});
 
 function setActiveNav(activeBtn) {
   [navHome, navSearch, navFavorites].forEach(btn => btn.classList.remove("active"));
   activeBtn.classList.add("active");
+}
+
+export function updateFavCount() {
+  const count = getFavorites().length;
+  const badge = document.getElementById("favCount");
+  badge.textContent = count;
+  if (count > 0) {
+    badge.classList.remove("hidden");
+  } else {
+    badge.classList.add("hidden");
+  }
 }
