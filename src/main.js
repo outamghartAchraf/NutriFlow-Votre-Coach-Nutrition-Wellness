@@ -43,10 +43,18 @@ searchInput.addEventListener("input", async (e) => {
     return;
   }
 
-  showLoader();
-  const results = await searchRecipes(query);
-  renderRecipes(results);
-  hideLoader();
+  try {
+    showLoader();
+
+    const results = await searchRecipes(query);
+
+    renderRecipes(results);
+  } catch (error) {
+    console.error("Error while searching recipes:", error);
+     
+  } finally {
+    hideLoader();
+  }
 });
 
 /* HOME */

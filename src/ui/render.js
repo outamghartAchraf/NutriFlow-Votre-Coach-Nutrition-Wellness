@@ -90,7 +90,7 @@ function openModal(recipe) {
   const favorites = getFavorites();
   const isFav = favorites.includes(recipe.id);
 
-  const ratingStars = "★".repeat(Math.round(recipe.rating || 0));
+  const ratingStars = "".repeat(Math.round(recipe.rating || 0));
   const prepTime = recipe.prepTimeMinutes && recipe.cookTimeMinutes
     ? `${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min`
     : recipe.prepTimeMinutes ? `${recipe.prepTimeMinutes} min` : "—";
@@ -144,7 +144,7 @@ function openModal(recipe) {
             <i class="fas fa-star modal-stat-icon gold"></i>
             <div class="modal-stat-info">
               <span class="modal-stat-label">Note</span>
-              <span class="modal-stat-value"><span class="stars">★</span>${recipe.rating || "—"}</span>
+              <span class="modal-stat-value"><span class="stars"><i class="fa-solid fa-star"></i></span>${recipe.rating || "—"}</span>
             </div>
           </div>
           <div class="modal-stat">
@@ -177,14 +177,20 @@ function openModal(recipe) {
     </div>
   `;
 
-  modal.querySelector(".close").onclick = () => modal.classList.add("hidden");
-  modal.onclick = (e) => { if (e.target === modal) modal.classList.add("hidden"); };
+modal.querySelector(".close").addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
 
-  modal.querySelector(".modal-fav-toggle").onclick = (e) => {
-    e.stopPropagation();
-    toggleFavorite(recipe.id);
-    const btn = modal.querySelector(".modal-fav-toggle");
-    btn.classList.toggle("fav");
-    renderRecipes(currentRecipes);
-  };
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+});
+modal.querySelector(".modal-fav-toggle").addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleFavorite(recipe.id);
+  const btn = modal.querySelector(".modal-fav-toggle");
+  btn.classList.toggle("fav");
+  renderRecipes(currentRecipes);
+});
 }
